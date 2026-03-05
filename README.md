@@ -16,7 +16,7 @@ Graduado en Ingeniería Informática por la Universidad de Almería (especialida
 
 - SEO y accesibilidad web
 
-Formación en Ciberseguridad:
+Formación en <b>Ciberseguridad</b>:
 
 - Ciberseguridad Avanzada en Entornos de Tecnologías de la Operación
 
