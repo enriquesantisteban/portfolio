@@ -16,13 +16,12 @@ Graduado en Ingeniería Informática por la Universidad de Almería (especialida
 
 - SEO y accesibilidad web
 
-- Formación en Ciberseguridad:
+Formación en Ciberseguridad:
 
-	* Ciberseguridad Avanzada en Entornos de Tecnologías de la Operación
+- Ciberseguridad Avanzada en Entornos de Tecnologías de la Operación
 
-	* Introduction to Cybersecurity – CISCO
-
-	* Testing Seguro: Calidad de Software con Enfoque en Ciberseguridad
+- Introduction to Cybersecurity – CISCO
+- Testing Seguro: Calidad de Software con Enfoque en Ciberseguridad
 
 Siempre busco aprender nuevas tecnologías y aplicarlas para maximizar el valor de cada proyecto.
 
