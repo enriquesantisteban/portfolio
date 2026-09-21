@@ -73,7 +73,7 @@ Web oficial y marca personal para entrenador personal del Club Deportivo Brao.
 
 🚀 Tú eliges el plan, yo lo hago realidad.
 
-<b>⚡ Habilidades</b>
+<b><h3>⚡ Habilidades</h3></b>
 
 - <b>Técnicas</b>: HTML, CSS, JavaScript, SQL, MongoDB, WordPress, SEO, Linux, Windows, Redes
 - <b>Profesionales</b>: Resolución de problemas, Trabajo en equipo, Documentación técnica, Soporte técnico, Adaptabilidad
