@@ -310,6 +310,46 @@ h2 span,
   aspect-ratio: 1.52;
   overflow: hidden;
   padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Capa de oscurecimiento suave para que resalten los textos */
+.project-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 21, 21, 0.3);
+  transition: background 0.3s ease;
+}
+
+.project-card:hover .project-art::before {
+  background: rgba(21, 21, 21, 0.1);
+}
+
+.project-number, 
+.project-arrow {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* Clases de fondo usando las imágenes de la carpeta images/ */
+.art-run04 {
+  background-image: url('../images/run04.png');
+}
+
+.art-salinasbox {
+  background-image: url('../images/salinasbox.png');
+}
+
+.art-regenerative {
+  background-image: url('../images/regenerative.png');
+}
+
+.art-epigen {
+  background-image: url('../images/epigen.png');
 }
 
 .art-lime {
