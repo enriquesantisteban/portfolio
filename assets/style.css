@@ -349,6 +349,39 @@ h2 span,
   justify-content: center;
 }
 
+.project-status {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  padding: 9px 12px;
+  border: 1px solid #ffffff80;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 700 10px monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.project-card-inactive .project-art::before {
+  background: rgba(21, 21, 21, 0.58);
+}
+
+.project-card-inactive:hover .project-art::before {
+  background: rgba(21, 21, 21, 0.58);
+}
+
+.project-inactive-notice {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--orange);
+  background: #e9a16d1f;
+  color: #66513f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .project-meta {
   display: flex;
   justify-content: space-between;
