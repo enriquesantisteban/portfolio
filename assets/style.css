@@ -540,6 +540,10 @@ h2 span,
   min-height: 120px;
 }
 
+.form-honeypot {
+  display: none !important;
+}
+
 .btn-submit {
   display: inline-flex;
   justify-content: center;
@@ -561,7 +565,6 @@ h2 span,
 }
 
 .form-success {
-  display: none;
   padding: 20px;
   background: #1e291b;
   border: 1px solid #73b544;
@@ -569,6 +572,21 @@ h2 span,
   border-radius: 4px;
   margin-top: 20px;
   font-size: 14px;
+}
+
+.form-error {
+  padding: 20px;
+  background: #351d1b;
+  border: 1px solid #e47b70;
+  color: #ffb8ae;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+#formSuccess[hidden],
+#formError[hidden] {
+  display: none !important;
 }
 
 footer {
