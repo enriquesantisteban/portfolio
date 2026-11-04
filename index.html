@@ -11,7 +11,7 @@
 </head>
 <body>
   <nav class="site-nav">
-    <!-- Logo en la barra de navegación (mucho más grande y visible: 55px) -->
+    <!-- Logo en la barra de navegación -->
     <a class="brand" href="#top">
       <span class="brand-mark-img" style="display: flex; align-items: center;">
         <img src="images/logo5.png" alt="Logo Enrique Santisteban" style="width: 55px; height: 55px; object-fit: contain;">
@@ -42,11 +42,11 @@
         <div class="visual-grid"></div>
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
-        <!-- Logo en la tarjeta visual flotante (bien grande y centrado en el cuadrado verde) -->
-        <div class="visual-card" style="justify-content: space-between; align-items: center; text-align: center; padding: 30px 20px;">
+        <!-- Tarjeta visual con textos a la izquierda y logo centrado -->
+        <div class="visual-card" style="justify-content: space-between; align-items: flex-start; padding: 25px;">
           <span style="font-size: 10px; letter-spacing: 0.12em;">ENRIQUE</span>
-          <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin: auto 0;">
-            <img src="images/logo5.png" alt="Logo" style="max-height: 140px; width: 100%; object-fit: contain;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
+            <img src="images/logo5.png" alt="Logo" style="max-height: 120px; width: 85%; object-fit: contain;">
           </div>
           <small style="font-size: 10px; letter-spacing: 0.12em;">ENGINEER / BUILDER</small>
         </div>
@@ -213,7 +213,8 @@
 
   <script>
     // Menú móvil
-    const button = document.querySelector('.menu-toggle'),links = document.querySelector('.nav-links');
+    const button = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
     button?.addEventListener('click', () => {
       const open = links.classList.toggle('is-open');
       button.setAttribute('aria-expanded', open);
