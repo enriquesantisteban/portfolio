@@ -315,7 +315,6 @@ h2 span,
   background-repeat: no-repeat;
 }
 
-/* Capa de oscurecimiento suave para que resalten los textos */
 .project-art::before {
   content: '';
   position: absolute;
@@ -328,89 +327,26 @@ h2 span,
   background: rgba(21, 21, 21, 0.1);
 }
 
-.project-number, 
-.project-arrow {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-}
-
-/* Clases de fondo usando las imágenes de la carpeta images/ */
-.art-run04 {
-  background-image: url('../images/run04.png');
-}
-
-.art-salinasbox {
-  background-image: url('../images/salinasbox.png');
-}
-
-.art-regenerative {
-  background-image: url('../images/regenerative.png');
-}
-
-.art-epigen {
-  background-image: url('../images/epigen.png');
-}
-
-.art-lime {
-  background: var(--lime);
-}
-
-.art-cream {
-  background: #ddd7c5;
-}
-
-.art-blue {
-  background: var(--blue);
-}
-
-.art-orange {
-  background: var(--orange);
-}
-
 .project-number {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font: 11px monospace;
-}
-
-.art-lines {
-  position: absolute;
-  inset: 12% 8%;
-  border: 1px solid #15151545;
-  transform: rotate(-8deg);
-}
-
-.art-lines:after {
-  content: '';
-  position: absolute;
-  inset: 20% -8%;
-  border: 1px solid #15151545;
-  transform: rotate(14deg);
-}
-
-.art-word {
-  position: absolute;
-  left: 12%;
-  bottom: 10%;
-  font-size: clamp(3rem, 7vw, 7rem);
-  font-weight: 700;
-  line-height: .8;
-  letter-spacing: -.1em;
-  mix-blend-mode: multiply;
+  color: #fff;
 }
 
 .project-arrow {
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 5px;
+  z-index: 2;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background: var(--ink);
   color: var(--paper);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-meta {
