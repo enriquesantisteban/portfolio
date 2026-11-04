@@ -215,7 +215,7 @@
 
         <div>
           <form id="contactForm" class="contact-form">
-            <input class="form-honeypot" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input class="form-honeypot" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
             <div class="form-group">
               <label for="name">Nombre *</label>
               <input type="text" id="name" name="name" required placeholder="Tu nombre">
@@ -230,10 +230,10 @@
             </div>
             <button type="submit" class="btn-submit">Enviar mensaje &rarr;</button>
           </form>
-          <div id="formSuccess" class="form-success">
+          <div id="formSuccess" class="form-success" hidden>
             ¡Mensaje enviado con éxito! Te responderé muy pronto.
           </div>
-          <div id="formError" class="form-error" role="alert">
+          <div id="formError" class="form-error" role="alert" hidden>
             No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente por correo.
           </div>
         </div>
@@ -277,6 +277,8 @@
     const submitButton = form.querySelector('button[type="submit"]');
     const honeypot = document.getElementById('website');
     const emailjsLoaded = typeof emailjs !== 'undefined';
+    successBox.hidden = true;
+    errorBox.hidden = true;
 
     if (emailjsLoaded) {
       emailjs.init('xRbbeuZ8qVKfafPuG');
@@ -287,7 +289,7 @@
 
       if (!emailjsLoaded) {
         errorBox.textContent = 'No se pudo cargar el servicio de envío. Recarga la página e inténtalo de nuevo.';
-        errorBox.style.display = 'block';
+        errorBox.hidden = false;
         return;
       }
 
@@ -295,19 +297,19 @@
         return;
       }
 
-      successBox.style.display = 'none';
-      errorBox.style.display = 'none';
+      successBox.hidden = true;
+      errorBox.hidden = true;
       submitButton.disabled = true;
       submitButton.textContent = 'Enviando...';
 
       emailjs.sendForm('service_gmail', 'template_contact', form)
         .then(() => {
           form.reset();
-          successBox.style.display = 'block';
+          successBox.hidden = false;
         })
         .catch((error) => {
           console.error('Error al enviar el formulario con EmailJS:', error);
-          errorBox.style.display = 'block';
+          errorBox.hidden = false;
         })
         .finally(() => {
           submitButton.disabled = false;
