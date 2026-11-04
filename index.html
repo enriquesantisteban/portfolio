@@ -215,6 +215,7 @@
 
         <div>
           <form id="contactForm" class="contact-form">
+            <input class="form-honeypot" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
               <label for="name">Nombre *</label>
               <input type="text" id="name" name="name" required placeholder="Tu nombre">
@@ -231,6 +232,9 @@
           </form>
           <div id="formSuccess" class="form-success">
             ¡Mensaje enviado con éxito! Te responderé muy pronto.
+          </div>
+          <div id="formError" class="form-error" role="alert">
+            No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente por correo.
           </div>
         </div>
       </div>
@@ -252,6 +256,7 @@
     <p>© <span id="current-year"></span> · Hecho con intención.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     // Menú móvil
     const button = document.querySelector('.menu-toggle');
@@ -265,14 +270,49 @@
     // Año automático en el footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Envío del formulario de contacto
+    // Envío del formulario de contacto con EmailJS
     const form = document.getElementById('contactForm');
     const successBox = document.getElementById('formSuccess');
+    const errorBox = document.getElementById('formError');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const honeypot = document.getElementById('website');
+    const emailjsLoaded = typeof emailjs !== 'undefined';
+
+    if (emailjsLoaded) {
+      emailjs.init('xRbbeuZ8qVKfafPuG');
+    }
 
     form?.addEventListener('submit', (e) => {
       e.preventDefault();
-      form.style.display = 'none';
-      successBox.style.display = 'block';
+
+      if (!emailjsLoaded) {
+        errorBox.textContent = 'No se pudo cargar el servicio de envío. Recarga la página e inténtalo de nuevo.';
+        errorBox.style.display = 'block';
+        return;
+      }
+
+      if (honeypot.value.trim() !== '') {
+        return;
+      }
+
+      successBox.style.display = 'none';
+      errorBox.style.display = 'none';
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+
+      emailjs.sendForm('service_gmail', 'template_contact', form)
+        .then(() => {
+          form.reset();
+          successBox.style.display = 'block';
+        })
+        .catch((error) => {
+          console.error('Error al enviar el formulario con EmailJS:', error);
+          errorBox.style.display = 'block';
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Enviar mensaje →';
+        });
     });
   </script>
 </body>
